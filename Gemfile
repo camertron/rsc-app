@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'rsc-rails', github: 'camertron/rsc-rails'
+# gem 'rsc-rails', github: 'camertron/rsc-rails'
 gem 'bootstrap', '~> 4.1'
 
 source 'http://rails-assets.org' do

@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/camertron/rsc-rails.git
-  revision: 41a743291dcd4612ddb3fbf8ba3e5e4b010f8997
-  specs:
-    rsc-rails (1.0.0)
-      css-rewrite (~> 2.0)
-      rails (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   remote: http://rails-assets.org/
@@ -89,10 +81,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
-    css-rewrite (2.0.0)
-      crass
-      railties (>= 4.0)
-      sprockets (~> 3.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -236,7 +224,6 @@ DEPENDENCIES
   rails (~> 5.2.1)
   rails-assets-jquery!
   rails-assets-jquery-textrange!
-  rsc-rails!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
