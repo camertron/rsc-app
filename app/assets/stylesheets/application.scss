@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *
+ *= require 'rsc'
+ */
+
+@import 'bootstrap';
+
+expr {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.instr-count-suggestion {
+  color: #999;
+}
+
+.rsc-container {
+  // overrides necessary because of bootstrap
+  width: 835px !important;
+  height: 595px !important;
+
+  // overrides to make it look nicer
+  border: none !important;
+  .rsc-monitor-output-field {
+    padding-top: 33px !important;
+  }
+
+  // center the interpreter on the page
+  margin-left: auto;
+  margin-right: auto;
+
+  // bootstrap overrides
+  h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.33em;
+    margin-top: 1.33em;
+  }
+}

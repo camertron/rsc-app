@@ -1,0 +1,136 @@
+<h4>RSC Instruction Set</h4>
+
+<div class='row mt-3'>
+  <div class='col-lg-8 col-sm-12'>
+    <table class='table table-hover table-responsive mt-3'>
+      <thead>
+        <tr>
+          <th scope='col' width='150px'>Instruction</th>
+          <th scope='col'>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><expr>LDA <em>location</em></expr></td>
+          <td>
+            <strong>Load</strong> value from <expr><em>location</em></expr> into accumulator.
+            <br/><br/>
+            <em>Example: </em><expr>LDA 5</expr> loads the value stored in memory location 5 into the accumulator.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>LDC <em>value</em></expr></td>
+          <td>
+            <strong>Load constant</strong> <expr><em>value</em></expr> into accumulator.
+            <br/><br/>
+            <em>Example: </em><expr>LDC 5</expr> loads the literal number 5 into the accumulator.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>STA</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Store</strong> accumulator into <expr><em>location</em></expr>.
+            <br/><br/>
+            <em>Example: </em><expr>STA 5</expr> writes the current value inside the accumulator into memory location 5.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>INP</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Input</strong> value from keyboard and store at <expr><em>location</em></expr>.
+            <br/><br/>
+            <em>Example: </em><expr>INP 5</expr> prompts the user for input via the keyboard. The inputted number is then stored in memory location 5.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>OUT</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Output</strong> value from <expr><em>location</em></expr> onto the screen.
+            <br/><br/>
+            <em>Example: </em><expr>OUT 5</expr> causes the value stored at memory location 5 to show up on the terminal screen.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>ADC</expr> <expr><em>value</em></expr></td>
+          <td>
+            <strong>Add constant</strong> <expr><em>value</em></expr> to accumulator.
+            <br/><br/>
+            <em>Example: </em><expr>ADC 5</expr> adds the literal number 5 to the existing accumulator value. If the accumulator originally contains 10, after <expr>ADC 5</expr> it will contain a value of 15.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>ADD</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Add</strong> value stored at <expr><em>location</em></expr> into accumulator.
+            <br/><br/>
+            <em>Example: </em><expr>ADD 5</expr> adds the value stored at memory location 5 to the existing accumulator value. If the accumulator originally contains 10 and memory location 5 contains a value of 8, after <expr>ADD 5</expr> the accumulator will contain a value of 18.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>SUB</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Subtract</strong> value stored in <expr><em>location</em></expr> from accumulator.
+            <br/><br/>
+            <em>Example: </em><expr>SUB 5</expr> subtracts the value stored at memory location 5 from the existing accumulator value. If the accumulator originally contains 10 and memory location 5 contains a value of 8, after <expr>SUB 5</expr> the accumulator will contain a value of 2.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>MUL</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Multiply</strong> accumulator by value stored in <expr><em>location</em></expr>.
+            <br/><br/>
+            <em>Example: </em><expr>MUL 5</expr> multiplies the existing accumulator value by the value stored at memory location 5. If the accumulator originally contains 10 and memory location 5 contains a value of 8, after <expr>MUL 5</expr> the accumulator will contain a value of 80.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>DIV</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Divide</strong> accumulator by value stored in <expr><em>location</em></expr>.
+            <br/><br/>
+            <em>Example: </em><expr>DIV 5</expr> divides the existing accumulator value by the value stored at memory location 5. If the accumulator originally contains 20 and memory location 5 contains a value of 4, after <expr>DIV 5</expr> the accumulator will contain a value of 5.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>BRU</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Branch</strong> to <expr><em>location</em></expr>.
+            <br/><br/>
+            <em>Example: </em><expr>BRU 5</expr> causes execution to jump to instruction 5, skipping all the instructions between 5 and the current instruction. Note that it is perfectly acceptable to jump backwards as well as forwards, i.e. to an instruction before <em>or</em> after the current one.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>BPA</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Branch</strong> to <expr><em>location</em></expr> if accumulator is <strong>positive</strong>.
+            <br/><br/>
+            <em>Example: </em><expr>BPA 5</expr> jumps to location 5 if and only if the current accumulator value is <em>positive</em> (i.e. greater than but not equal to zero). If the accumulator contains a value of 2, after <expr>BPA 5</expr> execution will resume from instruction 5. If the accumulator contains a value of 0 or less, after <expr>BPA 5</expr> execution will continue with the instruction immediately following the current one. Note that it is perfectly acceptable to jump backwards as well as forwards, i.e. to an instruction before <em>or</em> after the current one.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>BNA</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Branch</strong> to <expr><em>location</em></expr> if accumulator is <strong>negative</strong>.
+            <br/><br/>
+            <em>Example: </em><expr>BNA 5</expr> jumps to location 5 if and only if the current accumulator value is <em>negative</em> (i.e. less than but not equal to zero). If the accumulator contains a value of -2, after <expr>BNA 5</expr> execution will resume from instruction 5. If the accumulator contains a value of 0 or greater, after <expr>BNA 5</expr> execution will continue with the instruction immediately following the current one. Note that it is perfectly acceptable to jump backwards as well as forwards, i.e. to an instruction before <em>or</em> after the current one.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>BZA</expr> <expr><em>location</em></expr></td>
+          <td>
+            <strong>Branch</strong> to <expr><em>location</em></expr> if accumulator is <strong>zero</strong>.
+            <br/><br/>
+            <em>Example: </em><expr>BZA 5</expr> jumps to location 5 if and only if the current accumulator value is <em>zero</em>. If the accumulator contains a value of 0, after <expr>BZA 5</expr> execution will resume from instruction 5. If the accumulator contains any other positive or negative value, after <expr>BZA 5</expr> execution will continue with the instruction immediately following the current one. Note that it is perfectly acceptable to jump backwards as well as forwards, i.e. to an instruction before <em>or</em> after the current one.
+          </td>
+        </tr>
+        <tr>
+          <td><expr>STP</expr></td>
+          <td>
+            <strong>Stop</strong> execution.
+            <br/><br/>
+            <em>Example: </em><expr>STP</expr> terminates your program. All programs <strong><em>must</em></strong> have <expr>STP</expr> as the last instruction.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
