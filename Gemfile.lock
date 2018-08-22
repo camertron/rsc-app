@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/camertron/rsc-rails.git
+  revision: 41a743291dcd4612ddb3fbf8ba3e5e4b010f8997
+  specs:
+    rsc-rails (1.0.0)
+      css-rewrite (~> 2.0)
+      rails (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   remote: http://rails-assets.org/
@@ -51,6 +59,8 @@ GEM
     autoprefixer-rails (9.1.2)
       execjs
     bindex (0.5.0)
+    bootsnap (1.3.1)
+      msgpack (~> 1.0)
     bootstrap (4.1.3)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
@@ -79,6 +89,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    css-rewrite (2.0.0)
+      crass
+      railties (>= 4.0)
+      sprockets (~> 3.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -106,6 +120,7 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    msgpack (1.2.4)
     multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.8.4)
@@ -208,6 +223,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootsnap (>= 1.1.0)
   bootstrap (~> 4.1)
   capybara (>= 2.15)
   chromedriver-helper
@@ -220,6 +236,7 @@ DEPENDENCIES
   rails (~> 5.2.1)
   rails-assets-jquery!
   rails-assets-jquery-textrange!
+  rsc-rails!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

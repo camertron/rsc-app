@@ -16,4 +16,4 @@
 //
 //= require 'jquery'
 //= require 'jquery-textrange'
-// require 'rsc'
+//= require 'rsc'
