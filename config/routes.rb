@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'programs#new'
 
   resources :users, except: [:show]
+  get '/sign_up' => 'users#new', as: 'sign_up'
+
   resources :programs
   resources :instructions, only: [:index]
   resources :exercises, only: [:index]
