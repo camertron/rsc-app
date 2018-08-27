@@ -1,0 +1,10 @@
+<h1>My Programs</h1>
+<br/>
+
+<% @programs.each do |program| %>
+  <%= link_to program.title, edit_program_path(program) %>
+<% end %>
+
+<br/>
+
+<%= will_paginate @programs, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

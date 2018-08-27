@@ -1,0 +1,25 @@
+<% if @program.errors.any? %>
+  <div id='error_explanation' class='alert alert-danger'>
+    <p><%= pluralize(@program.errors.count, 'error') %> prohibited this program from being saved:</p>
+    <ul>
+      <% @program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@program) do |f| %>
+  <% if logged_in? %>
+    <div class='clearfix' style='margin-left: 180px'>
+      <div class='float-left'>
+        <strong><%= f.label :title, class: 'rsc-computer-font mr-2' %></strong>
+        <%= f.text_field :title, style: 'width: 500px' %>
+      </div>
+      <%= f.submit class: 'btn btn-primary btn-sm float-right', style: 'margin-right: 178px' %>
+    </div>
+  <% end %>
+  <div class='rsc-rails'>
+    <%= f.hidden_field :source_code, class: 'rsc-program' %>
+  </div>
+<% end %>

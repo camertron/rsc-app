@@ -17,7 +17,7 @@
         <div class='collapse navbar-collapse'>
           <ul class='navbar-nav mr-auto'>
             <li class='nav-item'>
-              <a class='nav-link' href='<%= interpreter_index_path %>'>Interpreter</a>
+              <a class='nav-link' href='<%= programs_path %>'>Programs</a>
             </li>
             <li class='nav-item'>
               <a class='nav-link' href='<%= instructions_path %>'>Instruction Set</a>
@@ -27,10 +27,31 @@
             </li>
           </ul>
         </div>
+
+        <div>
+          <% if logged_in? %>
+            You are logged in as <%= link_to current_user.login, edit_user_path(current_user) %> |
+            <%= link_to 'Logout', logout_path, data: { method: :delete } %>
+          <% else %>
+            <%= link_to 'Login', login_path %>
+          <% end %>
+        </div>
       </div>
     </nav>
 
-    <div class='container mt-3'>
+    <div class='container mt-4'>
+      <% if notice %>
+        <div id='notice' class='alert alert-info' role='alert'>
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <% if alert %>
+        <div id='alert' class='alert alert-danger' role='alert'>
+          <%= alert %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
