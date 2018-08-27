@@ -1,4 +1,10 @@
-<h1>My Programs</h1>
+<div class='clearfix'>
+  <h1 class='float-left'>My Programs</h1>
+  <%= link_to new_program_path do %>
+    <button class='btn btn-primary float-left ml-3 mt-2'>Create Program</button>
+  <% end %>
+</div>
+
 <br/>
 
 <% @programs.each do |program| %>
