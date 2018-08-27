@@ -37,7 +37,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'rsc-rails', path: '~/workspace/rsc-rails'
+gem 'rsc-rails', github: 'camertron/rsc-rails'
 gem 'bootstrap', '~> 4.1'
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap4', '~> 0.2'

@@ -1,5 +1,6 @@
-PATH
-  remote: ../rsc-rails
+GIT
+  remote: https://github.com/camertron/rsc-rails.git
+  revision: 0a90cf16698fbf3c71a2c9f5b8a984685081b063
   specs:
     rsc-rails (1.0.0)
       css-rewrite (~> 2.0)
